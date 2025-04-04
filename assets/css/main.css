@@ -1,3 +1,10 @@
+* {box-sizing: border-box; color: #444; font-family: sans-serif; margin: 0; padding: 0; user-select: none;}
+a {color: #3498db; display: inline-block}
+p {line-height: 150%}
+img {max-width: 100%;}
+body, html {height: 100%;}
+body {background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);}
+
 button {
     background-color: #ea1d2c;
     color: #ffffff;
@@ -16,14 +23,7 @@ button {
     transform: scale(1.05);
   }
 
-  * {box-sizing: border-box; color: #444; font-family: sans-serif; margin: 0; padding: 0; user-select: none;}
-a {color: #3498db; display: inline-block}
-body, html {height: 100%;}
-img {max-width: 100%;}
-p {line-height: 150%}
-  
-body {background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);}
-
+ 
 /* MENU */
 .menu {  
   align-items: center;
@@ -92,7 +92,6 @@ body {background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff
   color: #444;
   text-decoration: none;
 }
-/* MENU-LISTA */
 
 /* FILTERS */
 
@@ -159,9 +158,8 @@ body {background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff
 }
 
 
-/* CARDS */
+/* CARDS ANIMATIONS */
 
-/* ANIMATIONS */
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
