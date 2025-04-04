@@ -115,6 +115,8 @@ body {background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff
 .card {
   display: flex;
   margin-bottom: 30px;
+  
+  
 }
 .card-content {
   align-items: center;
@@ -125,6 +127,8 @@ body {background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff
   justify-content: space-between;
   padding: 10px;
   width: calc(100% - 150px);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 .card-title {
   font-size: 20px;
@@ -134,12 +138,15 @@ body {background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff
 .card-img {
   height: 150px;
   width: 150px;
+
 }
 
 .card-img img {
   display: block;
   height: 100%;
   object-fit: cover;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 .card-stars i {color: #f1c40f;}
 .card-items {
