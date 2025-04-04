@@ -1,17 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-</head>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cardápio</title>
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
     <body>
         
+        <div id="app">
+            <nav class="menu">
+              <span class="menu-btn-content">
+                <i class="fas fa-bars">
+                </i>  
+              </span>
+              <span>
+                <h1 class="menu-title">Assis Lanches</h1>
+              </span>
+              <!-- Botão ir para ifood-->
+              <span>
+              <button onclick="pedir()">Pedir no ifood</button>
+              </span>
+            </nav> 
+              
+            <ul class="menu-lista">
+            
+              <li 
+                  @click="alterarMenu('lanches')"
+                  :class="{active: menuLista == 'lanches'}">Lanches</li>
+              <li 
+                  @click="alterarMenu('bebidas')"
+                  :class="{active: menuLista == 'bebidas'}">Bebidas</li>
+            
+            </ul>
+            <!--Faces das janelas de transição-->
+            <!--cards dos lanches-->
+            <transition name="animation-lanches" leave-active-class="animated bounceOutRight" enter-active-class="animated fadeIn">
+                    
+                <div v-if="menuLista === 'lanches' "class="cards">  
 
+                        <div  class="card">
+                            <div class="card-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqdAW3t81_hkWmf5TTtoOWvt7P6bYfxq0MvQ&s" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h1 class="card-title">X-burguer</h1>
+                                <ul class="card-items">
+                                    <li>Pão,</li>
+                                    <li>Hamburger 150gr,</li>
+                                    <li>Presunto,</li>
+                                    <li>Mussarela</li>
+                                </ul>
+                                <div class="card-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            
+                            </div>
+                        </div>  
 
+                        <div  class="card">
+                            <div class="card-img">
+                                <img src="https://canada1.discourse-cdn.com/ifood/optimized/2X/8/849e3a786429822f973d2ede6e271d19de044bab_2_750x750.jpeg" alt="">
+                            </div>
+                                <div class="card-content">
+                                    <h1 class="card-title">X-Tudo</h1>
+                                    <ul class="card-items">
+                                        <li>Pão,</li>
+                                        <li>Hamburger 150gr,</li>
+                                        <li>Presunto,</li>
+                                        <li>Mussarela,</li>
+                                        <li>ovo,</li>
+                                        <li>bacon</li>
+                                    </ul>
+                                    <div class="card-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                        </div>  
 
+                    <div  class="card">
+                        <div class="card-img">
+                            <img src="https://revistamenu.com.br/wp-content/uploads/sites/24/2019/02/burger_x_cheese_bacon_divulgaccca7acc83o-1.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h1 class="card-title">X-bacon</h1>
+                            <ul class="card-items">
+                                <li>Pão,</li>
+                                <li>Hamburger 150gr,</li>
+                                <li>Presunto,</li>
+                                <li>Mussarela,</li>
+                                <li>Bacon</li>
+                            </ul>
+                            <div class="card-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>  
 
+                    <div  class="card">
+                        <div class="card-img">
+                            <img src="https://casadohamburguer.za.app.br/_core/_uploads/41/2021/07/1716290721khdhfhgab7.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h1 class="card-title">X-Salada</h1>
+                            <ul class="card-items">
+                                <li>Pão,</li>
+                                <li>Hamburger 150gr,</li>
+                                <li>Presunto,</li>
+                                <li>Mussarela,</li>
+                                <li>Alfaçe e Tomate</li>
+                            </ul>
+                            <div class="card-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+        
+            </transition>
+
+            <!-- cards das bebidas -->
+            <transition name="animation-bebidas" leave-active-class="animated fadeOutRightBig" enter-active-class="animated fadeInRightBig">
+                <div v-if="menuLista === 'bebidas' " class="cards">  
+
+                    <div  class="card">
+                        <div class="card-img">
+                         <img src="https://www.padariapampulha.com.br/wp-content/uploads/2023/12/95587.png" alt="">
+                        </div>
+                        <div class="card-content">
+                                <h1 class="card-title">Suco de Laranga 500ml</h1>
+                            <ul class="card-items">
+                                <li>R$<R1>10,00</R1></li>
+                            </ul>
+                            <div class="card-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>                
+
+                    <div  class="card">
+                        <div class="card-img">
+                         <img src="https://aguamineralhydrate.com.br/wp-content/uploads/2016/02/Garrafa-Agua-Mineral-1-5-litro-entrega.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                                <h1 class="card-title">Agua 600ml</h1>
+                            <ul class="card-items">
+                                <li>R$<R1>5,00</R1></li>
+                            </ul>
+                            <div class="card-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>       
+
+                    <div  class="card">
+                        <div class="card-img">
+                         <img src="https://www.extramercado.com.br/img/uploads/1/1/25295001.png" alt="">
+                        </div>
+                        <div class="card-content">
+                                <h1 class="card-title">Coca cola 1l</h1>
+                            <ul class="card-items">
+                                <li>R$<R1>10,00</R1></li>
+                            </ul>
+                            <div class="card-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>       
+
+                    <div  class="card">
+                        <div class="card-img">
+                         <img src="https://pizzariadobairro.com.br/wp-content/uploads/2020/11/Coca-Cola-Zero-garrafa-2l.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                                <h1 class="card-title">Coca Zero 1l</h1>
+                            <ul class="card-items">
+                                <li>R$<R1>10,00</R1></li>
+                            </ul>
+                            <div class="card-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>       
+                </div> 
+            </transition>
+              
+            </div> 
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>
+
